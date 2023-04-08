@@ -18,6 +18,11 @@
     
 2. **Изучите опции node_exporter и вывод /metrics по умолчанию. Приведите несколько опций, которые вы бы выбрали для базового мониторинга хоста по CPU,          памяти, диску и сети.**
 
+    Чтобы активировать дополнительные опции для базового мониторинга хоста по CPU, памяти, диску и сети, добавим флаг –collector. в файл                     node_exporter.service при запуске:
+    
+    ExecStart=/usr/local/bin/node_exporter  --collector.disable-defaults --collector.netstat --collector.meminfo --collector.cpu --collector.filesystem
+    
+    ![OS-2_2](img/OS-2_2.png)
     
 3. **Установите в свою виртуальную машину Netdata. Воспользуйтесь готовыми пакетами для установки (sudo apt install -y netdata).
 
